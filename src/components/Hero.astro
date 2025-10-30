@@ -12,12 +12,17 @@ import { ChevronDown, Volume2, VolumeX } from 'lucide-astro';
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-16 relative z-10">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Left Content -->
-      <div class="text-white space-y-6 animate-fade-in-up">
+      <div class="text-white space-y-6 animate-fade-in-up relative z-10">
+        <!-- Background Message Icon -->
+        <div class="absolute top-0 right-0 w-[40rem] h-[25rem] -z-10 opacity-10">
+          <img src="/gioia-message.svg" alt="" class="w-full h-full object-contain" />
+        </div>
+
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
           Transporte <span class="text-primary-400">Gioia</span> e Hijos SRL
         </h1>
         <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
-          Nacimos en Lanús, en el corazón del Gran Buenos Aires. 
+          Nacimos en Lanús, en el corazón del Gran Buenos Aires.
           Desde nuestros inicios, trabajamos con compromiso y visión para brindar un servicio logístico de excelencia.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
@@ -39,7 +44,7 @@ import { ChevronDown, Volume2, VolumeX } from 'lucide-astro';
             autoplay
             loop
             playsinline
-            poster="/gioia.jpeg"
+            poster="/gioia-logo.png"
           >
             <source src="/landig_speech.mp4" type="video/mp4" />
             Tu navegador no soporta el elemento de video.
@@ -63,14 +68,15 @@ import { ChevronDown, Volume2, VolumeX } from 'lucide-astro';
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+  </div>
+
+  <!-- Scroll Indicator -->
+    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
       <a href="#nosotros" class="flex flex-col items-center text-white/70 hover:text-white transition-colors bg-dark-900/50 backdrop-blur-sm px-4 py-2 rounded-full">
         <span class="text-sm mb-1">Descubre más</span>
         <ChevronDown size={24} />
       </a>
     </div>
-  </div>
 
   <!-- Animated gradient orbs -->
   <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-500/30 rounded-full blur-3xl animate-pulse-slow"></div>
