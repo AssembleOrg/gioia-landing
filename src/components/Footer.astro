@@ -1,0 +1,154 @@
+---
+import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-astro';
+import { Image } from 'astro:assets';
+---
+
+<footer class="bg-gradient-to-b from-dark-800 to-dark-900 text-white pt-16 pb-8">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Footer Content -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Company Info -->
+      <div class="space-y-4">
+        <Image src="/gioia.jpeg" alt="Gioia Transporte" width={200} height={80} class="h-16 w-auto mb-4" loading="lazy" />
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Soluciones de transporte confiables y seguras. Comprometidos con la excelencia y la puntualidad en cada envío.
+        </p>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/transportegioiaehijos/" target="_blank" class="bg-white/10 hover:bg-primary-500 p-2 rounded-full transition-all duration-300 transform hover:scale-110" aria-label="Facebook">
+            <Facebook size={20} />
+          </a>
+          <!-- <a href="#" class="bg-white/10 hover:bg-primary-500 p-2 rounded-full transition-all duration-300 transform hover:scale-110" aria-label="Instagram">
+            <Instagram size={20} />
+          </a>
+          <a href="#" class="bg-white/10 hover:bg-primary-500 p-2 rounded-full transition-all duration-300 transform hover:scale-110" aria-label="LinkedIn">
+            <Linkedin size={20} />
+          </a>
+          <a href="#" class="bg-white/10 hover:bg-primary-500 p-2 rounded-full transition-all duration-300 transform hover:scale-110" aria-label="Twitter">
+            <Twitter size={20} />
+          </a> -->
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 text-primary-400">Enlaces Rápidos</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="#inicio" class="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-primary-400 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="#nosotros" class="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-primary-400 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+              Nosotros
+            </a>
+          </li>
+          <li>
+            <a href="#servicios" class="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-primary-400 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a href="#rastreo" class="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-primary-400 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+              Rastrear Pedido
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" class="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-primary-400 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 text-primary-400">Servicios</h3>
+        <ul class="space-y-3 text-gray-400 text-sm">
+          <li>• Express 24/48 hs</li>
+          <li>• Encomienda y Paquetería</li>
+          <li>• Mudanzas y Fletes</li>
+          <li>• Transporte de Carga</li>
+          <li>• Seguimiento en Tiempo Real</li>
+          <li>• Logística Personalizada</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 text-primary-400">Contacto</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-3 text-gray-400 text-sm">
+            <Phone size={18} class="flex-shrink-0 mt-0.5 text-primary-400" />
+            <span>+5491121997046</span>
+          </li>
+          <li class="flex items-start space-x-3 text-gray-400 text-sm">
+            <Mail size={18} class="flex-shrink-0 mt-0.5 text-primary-400" />
+            <span>transportegioiaehijos@gmail.com</span>
+          </li>
+          <li class="flex items-start space-x-3 text-gray-400 text-sm">
+            <MapPin size={18} class="flex-shrink-0 mt-0.5 text-primary-400" />
+            <span>Camilo Cavour 3101,<br />Lanús, Provincia de Buenos Aires</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-700 my-8"></div>
+
+    <!-- Bottom Footer -->
+    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-gray-400">
+      <p>
+        © {new Date().getFullYear()} <span class="text-primary-400 font-semibold">Transporte Gioia e Hijos SRL</span>. Todos los derechos reservados.
+      </p>
+      <div class="flex space-x-6">
+        <a href="#" class="hover:text-primary-400 transition-colors duration-300">Política de Privacidad</a>
+        <a href="#" class="hover:text-primary-400 transition-colors duration-300">Términos y Condiciones</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button
+  id="scroll-to-top"
+  class="fixed bottom-8 right-8 bg-primary-500 hover:bg-primary-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none z-40"
+  aria-label="Scroll to top"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+</button>
+
+<script>
+  // Scroll to top functionality
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  
+  if (scrollToTopBtn) {
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+      }
+    });
+
+    // Scroll to top on click
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
+

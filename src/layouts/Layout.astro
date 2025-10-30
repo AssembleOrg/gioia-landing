@@ -1,22 +1,163 @@
+---
+import '../styles/fonts.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = 'Transporte Gioia e Hijos SRL - Soluciones Logísticas Confiables',
+	description = 'Empresa líder en transporte de carga con servicios confiables, seguros y eficientes. Rastreo en tiempo real y atención personalizada 24/7.'
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/gioia.jpeg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="/gioia.jpeg" />
+
+		<title>{title}</title>
+
+		<!-- Preload Poppins fonts -->
+		<link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
+		<link rel="preload" href="/fonts/Poppins-Medium.ttf" as="font" type="font/ttf" crossorigin />
+		<link rel="preload" href="/fonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
+		<link rel="preload" href="/fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin />
+		
+		<!-- Preload critical assets -->
+		<link rel="preload" href="/gioia.jpeg" as="image" />
 	</head>
-	<body>
+	<body class="antialiased bg-white text-dark-800 overflow-x-hidden">
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+<style is:global>
+	/* Smooth scrolling */
+	html {
+		scroll-behavior: smooth;
+	}
+
+	/* Custom scrollbar */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #5CB8A8;
+		border-radius: 5px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #4A9689;
+	}
+
+	/* Animation utilities */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slideInLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-50px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes slideInRight {
+		from {
+			opacity: 0;
+			transform: translateX(50px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	/* Intersection Observer animations */
+	.animate-on-scroll {
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	}
+
+	.animate-on-scroll.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Focus styles for accessibility */
+	:focus-visible {
+		outline: 3px solid #5CB8A8;
+		outline-offset: 2px;
+	}
+
+	/* Remove focus outline for mouse users */
+	:focus:not(:focus-visible) {
+		outline: none;
 	}
 </style>
+
+<script>
+	// Intersection Observer for scroll animations
+	const observerOptions = {
+		threshold: 0.1,
+		rootMargin: '0px 0px -50px 0px'
+	};
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('is-visible');
+			}
+		});
+	}, observerOptions);
+
+	// Observe all elements with animation classes
+	document.addEventListener('DOMContentLoaded', () => {
+		const animatedElements = document.querySelectorAll('.animate-on-scroll');
+		animatedElements.forEach((el) => observer.observe(el));
+	});
+</script>

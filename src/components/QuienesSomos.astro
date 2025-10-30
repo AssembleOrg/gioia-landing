@@ -1,0 +1,128 @@
+---
+import { Target, Users, Award, TrendingUp } from 'lucide-astro';
+import { Image } from 'astro:assets';
+---
+
+<section id="nosotros" class="py-20 md:py-28 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl md:text-5xl font-bold text-dark-800 mb-4">
+        ¿Quiénes <span class="text-primary-500">Somos?</span>
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-primary-600 mx-auto mt-6 rounded-full"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+      <!-- Left: Image -->
+      <div class="order-2 lg:order-1 animate-fade-in">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <Image 
+            src="/somo_gioia.jpeg" 
+            alt="¿Quiénes somos? - Transporte Gioia"
+            width={800}
+            height={600}
+            class="w-full h-auto"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-900/30 to-transparent"></div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="order-1 lg:order-2 space-y-6 animate-fade-in-up">
+        <h3 class="text-3xl font-bold text-dark-800">Identidad de la Empresa</h3>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Somos una empresa de transporte con más de <strong class="text-primary-600">15 años de experiencia</strong> en el sector. 
+          Nacimos en un barrio trabajador y crecimos apostando a la mejora continua.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Hoy, contamos con un <strong class="text-primary-600">equipo altamente capacitado</strong> y una 
+          <strong class="text-primary-600">flota equipada</strong> para dar respuesta a cada necesidad logística.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Desde el corazón del Gran Buenos Aires, nos expandimos para ofrecer soluciones de transporte 
+          confiables, seguras y puntuales a empresas y particulares de toda la región.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mission, Vision, Values Cards -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+      <!-- Misión Card -->
+      <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl shadow-lg p-8 border-2 border-primary-100 transform hover:scale-105 transition-all duration-300">
+        <div class="bg-primary-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <Target size={32} class="text-white" />
+        </div>
+        <h3 class="text-2xl font-bold text-center mb-4 text-dark-800">Misión</h3>
+        <p class="text-gray-700 leading-relaxed text-center">
+          Brindar servicios de transporte confiables, seguros y eficientes, garantizando la satisfacción 
+          mediante soluciones logísticas personalizadas.
+        </p>
+      </div>
+
+      <!-- Visión Card -->
+      <div class="bg-gradient-to-br from-dark-50 to-white rounded-2xl shadow-lg p-8 border-2 border-gray-200 transform hover:scale-105 transition-all duration-300">
+        <div class="bg-dark-700 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <TrendingUp size={32} class="text-white" />
+        </div>
+        <h3 class="text-2xl font-bold text-center mb-4 text-dark-800">Visión</h3>
+        <p class="text-gray-700 leading-relaxed text-center">
+          Ser la empresa líder en transporte de cargas en la región, distinguiéndonos por nuestra 
+          innovación tecnológica y compromiso ambiental.
+        </p>
+      </div>
+
+      <!-- Valores Card -->
+      <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl shadow-lg p-8 border-2 border-primary-100 transform hover:scale-105 transition-all duration-300">
+        <div class="bg-primary-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <Award size={32} class="text-white" />
+        </div>
+        <h3 class="text-2xl font-bold text-center mb-4 text-dark-800">Valores</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
+            <span>Compromiso</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
+            <span>Puntualidad</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
+            <span>Seguridad</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
+            <span>Confianza</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
+            <span>Innovación</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      <div class="text-center animate-fade-in-up">
+        <div class="text-4xl md:text-5xl font-bold text-primary-500 mb-2">15+</div>
+        <div class="text-gray-600 font-medium">Años de Experiencia</div>
+      </div>
+      <div class="text-center animate-fade-in-up" style="animation-delay: 0.1s;">
+        <div class="text-4xl md:text-5xl font-bold text-primary-500 mb-2">500+</div>
+        <div class="text-gray-600 font-medium">Clientes Satisfechos</div>
+      </div>
+      <div class="text-center animate-fade-in-up" style="animation-delay: 0.2s;">
+        <div class="text-4xl md:text-5xl font-bold text-primary-500 mb-2">10K+</div>
+        <div class="text-gray-600 font-medium">Envíos Realizados</div>
+      </div>
+      <div class="text-center animate-fade-in-up" style="animation-delay: 0.3s;">
+        <div class="text-4xl md:text-5xl font-bold text-primary-500 mb-2">99%</div>
+        <div class="text-gray-600 font-medium">Entregas a Tiempo</div>
+      </div>
+    </div>
+  </div>
+</section>
+

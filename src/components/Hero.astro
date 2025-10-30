@@ -1,0 +1,106 @@
+---
+import { ChevronDown, Volume2, VolumeX } from 'lucide-astro';
+---
+
+<section id="inicio" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-900 via-dark-800 to-primary-900">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
+  </div>
+
+  <!-- Video Section -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-16 relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="text-white space-y-6 animate-fade-in-up">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          Transporte <span class="text-primary-400">Gioia</span> e Hijos SRL
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+          Nacimos en Lanús, en el corazón del Gran Buenos Aires. 
+          Desde nuestros inicios, trabajamos con compromiso y visión para brindar un servicio logístico de excelencia.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="#rastreo" class="inline-flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+            Rastrear mi Pedido
+          </a>
+          <a href="#contacto" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+            Contáctanos
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Content - Video -->
+      <div class="relative animate-fade-in">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-primary-400/30">
+          <video 
+            id="hero-video"
+            class="w-full h-auto rounded-2xl"
+            autoplay
+            loop
+            playsinline
+            poster="/gioia.jpeg"
+          >
+            <source src="/landig_speech.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+          <!-- Play overlay effect -->
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-900/50 to-transparent pointer-events-none"></div>
+          
+          <!-- Volume Control Button -->
+          <button
+            id="volume-control"
+            class="absolute top-4 right-4 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg z-10"
+            aria-label="Controlar volumen"
+          >
+            <Volume2 id="volume-icon-on" size={24} class="hidden" />
+            <VolumeX id="volume-icon-off" size={24} class="" />
+          </button>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-6 -right-6 w-32 h-32 bg-primary-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-primary-600/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      <a href="#nosotros" class="flex flex-col items-center text-white/70 hover:text-white transition-colors bg-dark-900/50 backdrop-blur-sm px-4 py-2 rounded-full">
+        <span class="text-sm mb-1">Descubre más</span>
+        <ChevronDown size={24} />
+      </a>
+    </div>
+  </div>
+
+  <!-- Animated gradient orbs -->
+  <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-500/30 rounded-full blur-3xl animate-pulse-slow"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-700/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+</section>
+
+<script>
+  // Volume control functionality
+  const video = document.getElementById('hero-video') as HTMLVideoElement;
+  const volumeControl = document.getElementById('volume-control');
+  const volumeIconOn = document.getElementById('volume-icon-on');
+  const volumeIconOff = document.getElementById('volume-icon-off');
+
+  if (video && volumeControl && volumeIconOn && volumeIconOff) {
+    // Set initial state - video starts muted
+    video.muted = true;
+    
+    // Toggle mute/unmute on button click
+    volumeControl.addEventListener('click', () => {
+      video.muted = !video.muted;
+      
+      // Update icons
+      if (video.muted) {
+        volumeIconOn.classList.add('hidden');
+        volumeIconOff.classList.remove('hidden');
+      } else {
+        volumeIconOn.classList.remove('hidden');
+        volumeIconOff.classList.add('hidden');
+      }
+    });
+  }
+</script>
+
